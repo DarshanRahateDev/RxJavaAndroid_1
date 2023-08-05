@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.appdemo.rxjavaandroid1.databinding.ActivityMainBinding
+import com.appdemo.rxjavaandroid1.example1.RxJavaEx1
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +32,13 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+
+        binding.buttonRxjavaEx1.setOnClickListener {
+            RxJavaEx1().callRxFunctionality()
+        }
+        binding.buttonRxjavaEx2.setOnClickListener {
+
         }
     }
 

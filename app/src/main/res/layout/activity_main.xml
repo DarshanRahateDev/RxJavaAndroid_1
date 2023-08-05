@@ -9,7 +9,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.RXJavaAndroid1.AppBarOverlay">
+        android:theme="@style/Theme.RXJavaAndroid1.AppBarOverlay"
+        android:visibility="gone">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -20,7 +21,9 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        layout="@layout/content_main"
+        android:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -29,6 +32,43 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
+        android:visibility="gone"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_rxjava_ex_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RxJava Ex 1"/>
+
+                <Button
+                    android:id="@+id/button_rxjava_ex_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RxJava Ex 2"/>
+
+                <Button
+                    android:id="@+id/button_rxjava_ex_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RxJava Ex 3"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
