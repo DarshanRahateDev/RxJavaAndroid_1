@@ -12,10 +12,14 @@ import android.view.MenuItem
 import com.appdemo.rxjavaandroid1.databinding.ActivityMainBinding
 import com.appdemo.rxjavaandroid1.example1.RxJavaEx1
 import com.appdemo.rxjavaandroid1.example1.RxJavaEx2
+import com.appdemo.rxjavaandroid1.example1.RxJavaEx3
 import com.appdemo.rxjavaandroid1.scheduler.AppSchedulerProvider
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var rxJavaEx1: RxJavaEx1
+    private lateinit var rxJavaEx2: RxJavaEx2
+    private lateinit var rxJavaEx3: RxJavaEx3
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -37,10 +41,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonRxjavaEx1.setOnClickListener {
+            rxJavaEx1 = RxJavaEx1()
             RxJavaEx1().callRxFunctionality()
         }
         binding.buttonRxjavaEx2.setOnClickListener {
-            RxJavaEx2(AppSchedulerProvider()).callRxFunctionality()
+            rxJavaEx2 = RxJavaEx2(AppSchedulerProvider())
+            rxJavaEx2.callRxFunctionality()
+        }
+        binding.buttonRxjavaEx3.setOnClickListener {
+            rxJavaEx3 = RxJavaEx3(AppSchedulerProvider())
+            rxJavaEx3.callRxFunctionality()
         }
     }
 
@@ -64,5 +74,12 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        rxJavaEx1.dispose()
+        rxJavaEx2.dispose()
+        rxJavaEx3.dispose()
     }
 }
