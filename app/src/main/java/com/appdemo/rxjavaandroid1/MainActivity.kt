@@ -13,6 +13,7 @@ import com.appdemo.rxjavaandroid1.databinding.ActivityMainBinding
 import com.appdemo.rxjavaandroid1.example1.RxJavaEx1
 import com.appdemo.rxjavaandroid1.example1.RxJavaEx2
 import com.appdemo.rxjavaandroid1.example1.RxJavaEx3
+import com.appdemo.rxjavaandroid1.example1.RxJavaEx4
 import com.appdemo.rxjavaandroid1.scheduler.AppSchedulerProvider
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rxJavaEx1: RxJavaEx1
     private lateinit var rxJavaEx2: RxJavaEx2
     private lateinit var rxJavaEx3: RxJavaEx3
+    private lateinit var rxJavaEx4: RxJavaEx4
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -51,6 +53,10 @@ class MainActivity : AppCompatActivity() {
         binding.buttonRxjavaEx3.setOnClickListener {
             rxJavaEx3 = RxJavaEx3(AppSchedulerProvider())
             rxJavaEx3.callRxFunctionality()
+        }
+        binding.buttonRxjavaEx4.setOnClickListener {
+            rxJavaEx4 = RxJavaEx4(AppSchedulerProvider())
+            rxJavaEx4.callRxFunctionality()
         }
     }
 
