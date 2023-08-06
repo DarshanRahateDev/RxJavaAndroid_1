@@ -11,6 +11,8 @@ import android.view.Menu
 import android.view.MenuItem
 import com.appdemo.rxjavaandroid1.databinding.ActivityMainBinding
 import com.appdemo.rxjavaandroid1.example1.RxJavaEx1
+import com.appdemo.rxjavaandroid1.example1.RxJavaEx2
+import com.appdemo.rxjavaandroid1.scheduler.AppSchedulerProvider
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             RxJavaEx1().callRxFunctionality()
         }
         binding.buttonRxjavaEx2.setOnClickListener {
-
+            RxJavaEx2(AppSchedulerProvider()).callRxFunctionality()
         }
     }
 
