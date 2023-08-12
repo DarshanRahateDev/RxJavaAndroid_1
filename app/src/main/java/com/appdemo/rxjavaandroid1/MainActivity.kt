@@ -10,10 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.appdemo.rxjavaandroid1.databinding.ActivityMainBinding
-import com.appdemo.rxjavaandroid1.example1.RxJavaEx1
-import com.appdemo.rxjavaandroid1.example1.RxJavaEx2
-import com.appdemo.rxjavaandroid1.example1.RxJavaEx3
-import com.appdemo.rxjavaandroid1.example1.RxJavaEx4
+import com.appdemo.rxjavaandroid1.example1.*
 import com.appdemo.rxjavaandroid1.scheduler.AppSchedulerProvider
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rxJavaEx2: RxJavaEx2
     private lateinit var rxJavaEx3: RxJavaEx3
     private lateinit var rxJavaEx4: RxJavaEx4
+    private lateinit var rxJavaEx5: RxJavaEx5
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -58,6 +56,10 @@ class MainActivity : AppCompatActivity() {
             rxJavaEx4 = RxJavaEx4(AppSchedulerProvider())
             rxJavaEx4.callRxFunctionality()
         }
+        binding.buttonRxjavaEx5.setOnClickListener {
+            rxJavaEx5 = RxJavaEx5(AppSchedulerProvider())
+            rxJavaEx5.callRxFunctionality()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -87,5 +89,7 @@ class MainActivity : AppCompatActivity() {
         rxJavaEx1.dispose()
         rxJavaEx2.dispose()
         rxJavaEx3.dispose()
+        rxJavaEx4.dispose()
+        rxJavaEx5.dispose()
     }
 }
