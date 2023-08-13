@@ -85,6 +85,14 @@
                     android:layout_height="wrap_content"
                     android:text="Create Operator"/>
 
+                <Button
+                    android:id="@+id/button_rxjava_ex_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Map Operator"/>
+
+
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

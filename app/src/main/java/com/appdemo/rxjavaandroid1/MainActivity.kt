@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rxJavaEx4: RxJavaEx4
     private lateinit var rxJavaEx5: RxJavaEx5
     private lateinit var rxJavaEx6: RxJavaEx6
+    private lateinit var rxJavaEx7: RxJavaEx7
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -64,6 +65,10 @@ class MainActivity : AppCompatActivity() {
         binding.buttonRxjavaEx6.setOnClickListener {
             rxJavaEx6 = RxJavaEx6(AppSchedulerProvider())
             rxJavaEx6.callRxFunctionality()
+        }
+        binding.buttonRxjavaEx7.setOnClickListener {
+            rxJavaEx7 = RxJavaEx7(AppSchedulerProvider())
+            rxJavaEx7.callRxFunctionality()
         }
     }
 
