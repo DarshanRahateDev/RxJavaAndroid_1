@@ -77,7 +77,13 @@
                     android:id="@+id/button_rxjava_ex_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RxJava Ex 5"/>
+                    android:text="Just, Range, fromArray operator"/>
+
+                <Button
+                    android:id="@+id/button_rxjava_ex_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Create Operator"/>
 
             </LinearLayout>
         </ScrollView>

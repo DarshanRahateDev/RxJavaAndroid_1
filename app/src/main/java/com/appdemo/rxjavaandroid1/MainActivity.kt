@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rxJavaEx3: RxJavaEx3
     private lateinit var rxJavaEx4: RxJavaEx4
     private lateinit var rxJavaEx5: RxJavaEx5
+    private lateinit var rxJavaEx6: RxJavaEx6
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -60,6 +61,10 @@ class MainActivity : AppCompatActivity() {
             rxJavaEx5 = RxJavaEx5(AppSchedulerProvider())
             rxJavaEx5.callRxFunctionality()
         }
+        binding.buttonRxjavaEx6.setOnClickListener {
+            rxJavaEx6 = RxJavaEx6(AppSchedulerProvider())
+            rxJavaEx6.callRxFunctionality()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -91,5 +96,6 @@ class MainActivity : AppCompatActivity() {
         rxJavaEx3.dispose()
         rxJavaEx4.dispose()
         rxJavaEx5.dispose()
+        rxJavaEx6.dispose()
     }
 }
